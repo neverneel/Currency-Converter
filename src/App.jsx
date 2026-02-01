@@ -34,6 +34,7 @@ function App() {
             <div className='w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'>
             <form onSubmit={(e) => {
               e.preventDefault();
+              convert()
             }}>
 
               <div className='w-full mb-1'>
@@ -41,8 +42,9 @@ function App() {
                       label = "From"
                       amount={amount}
                       currencyOptions={options}
-                      onCurrencyChange={(currency) => setAmount(amount)}
+                      onCurrencyChange={(currency) => setFrom(currency)}
                       selectCurrency={from}
+                      onAmountChange={(amount) => setAmount(amount)}
                       />
               </div>
               <div className='relative w-full h-0.5'>
@@ -63,7 +65,7 @@ function App() {
                       amount={convertedAmount}
                       currencyOptions={options}
                       onCurrencyChange={(currency) => setTo(currency)}
-                      selectCurrency={from}
+                      selectCurrency={to}
                       amountDisable
                 
                 />
